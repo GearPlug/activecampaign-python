@@ -38,7 +38,7 @@ class Contacts(object):
         :return: A json
         """
         if "email" not in data:
-            raise KeyError("The webhook must have an email")
+            raise KeyError("The contact must have an email")
         return self.client._post("contact_sync", data=data)
 
     def subscribe_contact(self, data):
@@ -70,7 +70,8 @@ class Contacts(object):
         :return: A json
         """
         if "email" not in data:
-            raise KeyError("The webhook must have an email")
+            raise KeyError("The contact must have an email")
+
         return self.client._post("contact_add", data=data)
 
     def edit_contact(self, data):
@@ -102,14 +103,14 @@ class Contacts(object):
         :return: A json
         """
         if "email" not in data:
-            raise KeyError("The webhook must have an email")
+            raise KeyError("The contact must have an email")
         return self.client._post("contact_edit", data=data)
 
     def view_contact_email(self, email):
         return self.client._get("contact_view_email", aditional_data=[('email',email)])
 
     def view_contact(self, id):
-        return self.client._post("contact_view", aditional_data=[('id', id)])
+        return self.client._get("contact_view", aditional_data=[('id', id)])
 
     def delete_contact(self, id):
-        return self.client._post("contact_delete", aditonal_data=[('id', id)])
+        return self.client._get("contact_delete", aditional_data=[('id', id)])

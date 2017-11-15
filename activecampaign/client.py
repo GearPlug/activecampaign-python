@@ -29,11 +29,11 @@ class Client(object):
         self.tasks = Tasks(self)
         self.deals = Deals(self)
 
-    def _get(self, action: object) -> object:
-        return self._request('GET', action)
+    def _get(self, action, aditional_data=None):
+        return self._request('GET', action, aditional_data=aditional_data)
 
-    def _post(self, action, data=None):
-        return self._request('POST', action, data=data)
+    def _post(self, action, data=None, aditional_data=None):
+        return self._request('POST', action, data=data, aditional_data=aditional_data)
 
     def _delete(self, action):
         return self._request('DELETE', action)
@@ -43,10 +43,10 @@ class Client(object):
             ('api_action',action),
             ('api_key', self._apikey),
             ('api_output', 'json'),
-            ('ids', "all"),
         ]
         if aditional_data is not None:
-           params = sum(params, aditional_data)
+            for aditional in aditional_data:
+                params.append(aditional)
         response = requests.request(method, self._base_url+"/admin/api.php", params=params, data=data).json()
         return self._parse(response)
 

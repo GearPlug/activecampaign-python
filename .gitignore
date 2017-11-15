@@ -102,3 +102,6 @@ ENV/
 
 #idea
 .idea/
+
+#testing
+pruebas_active.py
