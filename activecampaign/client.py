@@ -11,6 +11,7 @@ from .lists import Lists
 from .webhooks import Webhooks
 from .tasks import Tasks
 from .deals import Deals
+from .users import Users
 from requests.auth import HTTPBasicAuth
 
 class Client(object):
@@ -28,6 +29,7 @@ class Client(object):
         self.webhooks = Webhooks(self)
         self.tasks = Tasks(self)
         self.deals = Deals(self)
+        self.user = Users(self)
 
     def _get(self, action, aditional_data=None):
         return self._request('GET', action, aditional_data=aditional_data)
