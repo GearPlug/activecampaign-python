@@ -8,5 +8,5 @@ class Users(object):
     def __init__(self, client):
         self.client = client
 
-    def view_contact(self, id):
+    def view_user(self, id):
         return self.client._get("user_view", aditional_data=[('id', id)])
