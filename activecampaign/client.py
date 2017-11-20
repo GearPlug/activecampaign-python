@@ -49,9 +49,7 @@ class Client(object):
         if aditional_data is not None:
             for aditional in aditional_data:
                 params.append(aditional)
-        print("params",params)
         response = requests.request(method, self._base_url+"/admin/api.php", params=params, data=data).json()
-        print("response", response)
         return self._parse(response)
 
     def _parse(self, response):
