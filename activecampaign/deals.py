@@ -45,7 +45,7 @@ class Deals(object):
         return self.client._post("deal_list")
 
     def get_deal(self, id):
-        return self.client._post("deal_get", aditonal_data=[('id', id)])
+        return self.client._post("deal_get", aditional_data=[('id', id)])
 
     def create_task_deal(self, data):
         """
