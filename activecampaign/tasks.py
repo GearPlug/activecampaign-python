@@ -9,5 +9,5 @@ class Tasks(object):
     def __init__(self, client):
         self.client = client
 
-    def get_task(self, id):
-        return self.client._get("tasks_get", aditonal_data=[('id', id)])
+    def get_tasks(self, id):
+        return self.client._get("tasks_get", aditional_data=[('id', id)])
