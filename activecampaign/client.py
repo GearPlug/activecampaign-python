@@ -29,7 +29,7 @@ class Client(object):
         self.webhooks = Webhooks(self)
         self.tasks = Tasks(self)
         self.deals = Deals(self)
-        self.user = Users(self)
+        self.users = Users(self)
 
     def _get(self, action, aditional_data=None):
         return self._request('GET', action, aditional_data=aditional_data)
