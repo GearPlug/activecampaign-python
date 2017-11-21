@@ -39,7 +39,7 @@ class Deals(object):
         return self.client._post("deal_add", data)
 
     def delete_deal(self, id):
-        return self.client._post("deal_delete", aditonal_data=[('id', id)])
+        return self.client._post("deal_delete", data={'id': id})
 
     def get_deals(self):
         return self.client._post("deal_list")
@@ -58,8 +58,10 @@ class Deals(object):
             }
         :return: A json
         """
-        if "duedate" not in data:
-            raise KeyError("The webhook must have a duedate")
         if "dealid" not in data:
-            raise KeyError("The webhook must have a dealid")
+            raise KeyError("The task must have a dealid")
+        if "duedate" not in data:
+            raise KeyError("The task must have a duedata")
+        if "type" not in data:
+            raise KeyError("The task must have a type")
         return self.client._post("deal_task_add", data)

@@ -2,7 +2,7 @@ import os
 from unittest import TestCase
 from activecampaign.client import Client
 
-class AcountTest(TestCase):
+class AccountTest(TestCase):
     def setUp(self):
         self.host = os.environ.get('host')
         self.api_key = os.environ.get('api_key')

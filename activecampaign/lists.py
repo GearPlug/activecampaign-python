@@ -19,7 +19,7 @@ class Lists(object):
         """
         :return: A json
         """
-        return self.client._get("list_list")
+        return self.client._get("list_list", aditional_data=[('ids', 'all')])
 
     def create_list(self, data):
         """
@@ -67,4 +67,4 @@ class Lists(object):
         """
         :return: A json
         """
-        return self.client._post("list_delete", aditional_data={'id', list_id})
+        return self.client._post("list_delete", aditional_data=[('id', list_id)])
