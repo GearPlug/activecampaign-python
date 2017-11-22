@@ -34,7 +34,7 @@ class Webhooks(object):
         return self.client._post("webhook_add", data=data)
 
     def delete_webhook(self, id):
-        return self.client._post("webhook_delete", aditonal_data=[('id', id)])
+        return self.client._post("webhook_delete", aditional_data=[('id', id)])
 
     def view_webhooks(self, id):
-        return self.client._post("webhook_view", aditonal_data=[('id', id)])
+        return self.client._post("webhook_view", aditional_data=[('id', id)])
