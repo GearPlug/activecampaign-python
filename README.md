@@ -90,7 +90,7 @@ Client.deals.get_deals()
 
 ### Site & Event Tracking
 
-###User
+### User
 
 - User_add
 - User_delete
