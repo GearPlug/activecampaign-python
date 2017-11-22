@@ -1,19 +1,19 @@
 # activecampaign-python
 ActiveCampaign API wrapper written in python.
 
-##Installing
+## Installing
 
 ```
 pip install git+git://github.com/GearPlug/activecampaign-python.git
 ```
 
-##Requirements
+## Requirements
 
 ```
 - Requests
 ```
 
-##Usage
+## Usage
 
 ```
 from activecampaign.client import Client
@@ -27,13 +27,13 @@ Get Deals:
 
 Client.deals.get_deals()
 ```
-##TODO
+## TODO
 
-###Address
-###Automation
-###Branding
-###Campaign
-###Contact
+### Address
+### Automation
+### Branding
+### Campaign
+### Contact
 
 - Contact_automation_list
 - Contact_delete_list
@@ -47,7 +47,7 @@ Client.deals.get_deals()
 - Contact_tag_remove
 - Contact_view_hash
 
-###Deal
+### Deal
 
 - Deal_edit
 - Deal_note_add
@@ -63,11 +63,11 @@ Client.deals.get_deals()
 - Deal_tasktype_delete
 - Deal_tasktype_edit
 
-###Form
+### Form
 
-###Group
+### Group
 
-###List
+### List
 
 - List_edit
 - List_field_add
@@ -76,19 +76,19 @@ Client.deals.get_deals()
 - List_field_view
 - List_paginator
 
-###Message
+### Message
 
-###Organization
+### Organization
 
-###Segment
+### Segment
 
-###Settings
+### Settings
 
-###Single Sin On
+### Single Sin On
 
-###Tags
+### Tags
 
-###Site & Event Tracking
+### Site & Event Tracking
 
 ###User
 
@@ -101,7 +101,7 @@ Client.deals.get_deals()
 - User_view_email
 - User_view_username
 
-###Webhook
+### Webhook
 
 - Webhook_edit
 - Webhook_events
