@@ -22,14 +22,14 @@ class Client(object):
             self._base_url = "https://" + url
         else:
             self._base_url = url
-        self._apikey = apikey
-        self.contacts = Contacts(self)
-        self.account = Account(self)
-        self.lists = Lists(self)
-        self.webhooks = Webhooks(self)
-        self.tasks = Tasks(self)
-        self.deals = Deals(self)
-        self.users = Users(self)
+            self._apikey = apikey
+            self.contacts = Contacts(self)
+            self.account = Account(self)
+            self.lists = Lists(self)
+            self.webhooks = Webhooks(self)
+            self.tasks = Tasks(self)
+            self.deals = Deals(self)
+            self.users = Users(self)
 
     def _get(self, action, aditional_data=None):
         return self._request('GET', action, aditional_data=aditional_data)

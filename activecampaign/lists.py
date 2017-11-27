@@ -13,7 +13,7 @@ class Lists(object):
         """
         :return: A json
         """
-        return self.client._get("list_field_view")
+        return self.client._get("list_field_view", aditional_data=[('ids', 'all')])
 
     def get_lists(self):
         """
