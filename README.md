@@ -57,7 +57,6 @@ Client.deals.get_deals()
 - Deal_pipeline_list
 - Deal_stage_add
 - Deal_stage_edit
-- Deal_stage_list
 - Deal_task_edit
 - Deal_tasktype_add
 - Deal_tasktype_delete

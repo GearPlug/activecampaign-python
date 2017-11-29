@@ -13,7 +13,7 @@ class DealsTest(TestCase):
                 'currency': 'usd',
                 'pipeline': os.environ.get('pipeline'),
                 'stage':'1',
-                'contactid':'2',
+                'contactid':os.environ.get('contact_id'),
                 'owner':'1'}
 
     def test_create_deal(self):
@@ -59,5 +59,9 @@ class DealsTest(TestCase):
             _view = False
         self.assertTrue(_view)
         self.client.deals.delete_deal(result_create['id'])
+
+    def test_get_deal_stage_list(self):
+        result = self.client.deals.get_deal_stage_list()
+        self.assertIsInstance(result, dict)
 
 

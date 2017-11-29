@@ -65,3 +65,6 @@ class Deals(object):
         if "type" not in data:
             raise KeyError("The task must have a type")
         return self.client._post("deal_task_add", data)
+
+    def get_deal_stage_list(self):
+        return self.client._get("deal_stage_list")
