@@ -10,3 +10,6 @@ class Users(object):
 
     def view_user(self, id):
         return self.client._get("user_view", aditional_data=[('id', id)])
+
+    def get_users(self):
+        return  self.client._get("user_list", aditional_data=[('ids', 'all')])
