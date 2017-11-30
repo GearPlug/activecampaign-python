@@ -41,8 +41,8 @@ class Deals(object):
     def delete_deal(self, id):
         return self.client._post("deal_delete", data={'id': id})
 
-    def get_deals(self):
-        return self.client._post("deal_list")
+    def get_deals(self, page):
+        return self.client._post("deal_list", aditional_data=[('page', page)])
 
     def get_deal(self, id):
         return self.client._post("deal_get", aditional_data=[('id', id)])
