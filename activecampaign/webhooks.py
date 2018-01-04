@@ -29,8 +29,6 @@ class Webhooks(object):
             raise KeyError("The webhook must have a url")
         if "action" not in data:
             raise KeyError("The webhook must have an action")
-        if "init" not in data:
-            raise KeyError("The webhook must have an init")
         return self.client._post("webhook_add", data=data)
 
     def delete_webhook(self, id):
