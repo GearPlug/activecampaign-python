@@ -4,6 +4,11 @@ from activecampaign.client import Client
 import json
 
 class DealsTest(TestCase):
+
+    """
+    pipeline : String ID pipeline
+    contact_id: String ID contact
+    """
     def setUp(self):
         self.client = Client(os.environ.get('host'), os.environ.get('api_key'))
 
@@ -41,7 +46,7 @@ class DealsTest(TestCase):
     def test_get_deals(self):
         data_deal = self._get_data_deal()
         result_create = self.client.deals.create_deal(data_deal)
-        deals = self.client.deals.get_deals()['deals']
+        deals = self.client.deals.get_deals(1)['deals']
         _find = None
         for deal in deals:
             if deal['id'] == result_create['id']:

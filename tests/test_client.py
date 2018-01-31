@@ -3,6 +3,11 @@ from unittest import TestCase
 from activecampaign.client import Client
 
 class AccountTest(TestCase):
+
+    """
+    host: String host active campaign
+    api_key: String api_key
+    """
     def setUp(self):
         self.host = os.environ.get('host')
         self.api_key = os.environ.get('api_key')
