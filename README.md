@@ -4,7 +4,7 @@ ActiveCampaign API wrapper written in python.
 ## Installing
 
 ```
-pip install git+git://github.com/GearPlug/activecampaign-python.git
+pip install activecampaign-python
 ```
 
 ## Requirements
