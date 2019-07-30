@@ -253,3 +253,15 @@ class Contacts(object):
 
     def remove_a_tag_from_a_contact(self):
         raise NotImplementedError
+
+    def retrieve_field_options(self, field_id):
+        """
+
+
+        Args:
+            field_id:
+
+        Returns:
+
+        """
+        return self.client._get("/fields/{}/options".format(field_id))

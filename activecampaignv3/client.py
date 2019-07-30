@@ -3,6 +3,7 @@ import requests
 from .contacts import Contacts
 from .deals import Deals
 from .lists import Lists
+from .notes import Notes
 from .tasks import Tasks
 from .users import Users
 from .webhooks import Webhooks
@@ -18,6 +19,7 @@ class Client(object):
         self.contacts = Contacts(self)
         self.deals = Deals(self)
         self.lists = Lists(self)
+        self.notes = Notes(self)
         self.tasks = Tasks(self)
         self.users = Users(self)
         self.webhooks = Webhooks(self)
@@ -46,7 +48,6 @@ class Client(object):
         return self._parse(requests.request(method, self.BASE_URL + endpoint, headers=_headers, **kwargs))
 
     def _parse(self, response):
-        print(response.request.url)
         if 'application/json' in response.headers['Content-Type']:
             r = response.json()
         else:
