@@ -81,7 +81,7 @@ class Contacts(object):
         """
         return self.client._delete("/contacts/{}".format(contact_id))
 
-    def list_all_contacts(self):
+    def list_all_contacts(self, **params):
         """
         View many (or all) contacts by including their ID's or various filters.
         This is useful for searching for contacts that match certain criteria -
@@ -91,7 +91,7 @@ class Contacts(object):
         Returns:
 
         """
-        return self.client._get("/contacts")
+        return self.client._get("/contacts", params=params)
 
     def list_all_automations_the_contacts_is_in(self, contact_id):
         """

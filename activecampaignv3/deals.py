@@ -55,7 +55,7 @@ class Deals(object):
         """
         return self.client._delete("/deals/{}".format(deal_id))
 
-    def list_all_deals(self):
+    def list_all_deals(self, **params):
         """
         Retrieve all existing deals
 
@@ -63,7 +63,7 @@ class Deals(object):
         Returns:
 
         """
-        return self.client._get("/deals")
+        return self.client._get("/deals", params=params)
 
     def create_a_deal_note(self, deal_id, data):
         """

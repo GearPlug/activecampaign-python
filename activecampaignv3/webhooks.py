@@ -55,7 +55,7 @@ class Webhooks(object):
         """
         return self.client._delete("/webhooks/{}".format(webhook_id))
 
-    def list_all_webhooks(self):
+    def list_all_webhooks(self, **params):
         """
         List all existing webhooks
 
@@ -63,7 +63,7 @@ class Webhooks(object):
         Returns:
 
         """
-        return self.client._get("/webhooks")
+        return self.client._get("/webhooks", params=params)
 
     def list_all_webhook_events(self):
         """
