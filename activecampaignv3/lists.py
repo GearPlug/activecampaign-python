@@ -47,7 +47,7 @@ class Lists(object):
         """
         return self.client._delete("/lists/{}".format(list_id))
 
-    def retrieve_all_lists(self):
+    def retrieve_all_lists(self, **params):
         """
         Retrieve all existing deals
 
@@ -55,7 +55,7 @@ class Lists(object):
         Returns:
 
         """
-        return self.client._get("/lists")
+        return self.client._get("/lists", params=params)
 
     def create_a_list_group_permission(self, data):
         """

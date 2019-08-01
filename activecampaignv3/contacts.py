@@ -111,7 +111,7 @@ class Contacts(object):
         """
         return self.client._get("/contacts/{}/scoreValues".format(contact_id))
 
-    def add_a_contact_to_an_automatization(self, data):
+    def add_a_contact_to_an_automation(self, data):
         """
 
 
@@ -123,7 +123,7 @@ class Contacts(object):
         """
         return self.client._post("/contactAutomations", json=data)
 
-    def retrieve_an_automatization_a_contact_is_in(self, contact_automation_id):
+    def retrieve_an_automation_a_contact_is_in(self, contact_automation_id):
         """
 
 
@@ -203,13 +203,13 @@ class Contacts(object):
         """
         return self.client._delete("/fields/{}".format(field_id))
 
-    def list_all_custom_fields(self):
+    def list_all_custom_fields(self, **params):
         """
 
         Returns:
 
         """
-        return self.client._get("/fields")
+        return self.client._get("/fields", params=params)
 
     def create_a_custom_field_relationship_to_list(self, data):
         """

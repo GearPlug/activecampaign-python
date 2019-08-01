@@ -91,7 +91,7 @@ class Users(object):
         """
         return self.client._delete("/users/{}".format(user_id))
 
-    def list_all_users(self):
+    def list_all_users(self, **params):
         """
         List all existing users
 
@@ -99,7 +99,7 @@ class Users(object):
         Returns:
 
         """
-        return self.client._get("/users")
+        return self.client._get("/users", params=params)
 
     def create_a_group(self):
         raise NotImplementedError

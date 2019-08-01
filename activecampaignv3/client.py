@@ -1,5 +1,6 @@
 import requests
 
+from .automations import Automations
 from .contacts import Contacts
 from .deals import Deals
 from .lists import Lists
@@ -16,6 +17,7 @@ class Client(object):
         self.BASE_URL = self.BASE_URL.format(url)
         self.api_key = api_key
 
+        self.automations = Automations(self)
         self.contacts = Contacts(self)
         self.deals = Deals(self)
         self.lists = Lists(self)
