@@ -106,8 +106,15 @@ class Deals(object):
     def delete_a_pipeline(self):
         raise NotImplementedError
 
-    def list_all_pipelines(self):
-        raise NotImplementedError
+    def list_all_pipelines(self, **params):
+        """
+        Retrieve all existing pipelines
+
+
+        Returns:
+
+        """
+        return self.client._get("/dealGroups", params=params)
 
     def create_a_stage(self):
         raise NotImplementedError
@@ -121,8 +128,15 @@ class Deals(object):
     def delete_a_stage(self):
         raise NotImplementedError
 
-    def list_all_stages(self):
-        raise NotImplementedError
+    def list_all_stages(self, **params):
+        """
+        Retrieve all existing stages
+
+
+        Returns:
+
+        """
+        return self.client._get("/dealStages", params=params)
 
     def move_deals_to_another_stage(self):
         raise NotImplementedError
