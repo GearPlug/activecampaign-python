@@ -55,7 +55,7 @@ class Tasks(object):
         """
         return self.client._delete("/dealTasks/{}".format(task_id))
 
-    def list_all_task(self, **params):
+    def list_all_tasks(self, **params):
         """
         Retrieve a list of existing tasks
 
