@@ -213,6 +213,27 @@ response = client.contacts.create_custom_field_options(data)
 response = client.contacts.retrieve_field_options("field_id")
 ```
 
+#### Add a tag to a contact
+```
+data = {
+    "contactTag": {
+        "contact": "1",
+        "tag": "20"
+    }
+}
+response = client.contacts.add_a_tag_to_contact(data)
+```
+
+#### Remove a tag from a contact
+```
+response = client.contacts.remove_a_tag_from_a_contact("contact_tag_id")
+```
+
+#### Retrieve contact tags
+```
+response = client.contacts.retrieve_contact_tags("contact_id")
+```
+
 ### Deals
 #### Create a deal
 ```
@@ -547,6 +568,46 @@ For more query params: https://developers.activecampaign.com/reference#get-a-lis
 #### List all webhook events
 ```
 response = client.webhooks.list_all_webhook_events()
+```
+
+### Tags
+#### Create a tag
+```
+data = {
+    "tag":{
+        "tag": "My Tag",
+        "tagType": "contact",
+        "description": "Description"
+    }
+}
+response = client.tags.create_a_tag(data)
+```
+
+#### Retrieve a tag
+```
+response = client.webhooks.retrieve_a_tag("tag_id")
+```
+
+#### Update a tag
+```
+data = {
+    "tag":{
+        "tag": "My Tag",
+        "tagType": "contact",
+        "description": "Description"
+    }
+}
+response = client.webhooks.update_a_tag("tag_id", data)
+```
+
+#### Delete a tag
+```
+response = client.webhooks.delete_a_tag("tag_id")
+```
+
+#### List all tags
+```
+response = client.webhooks.list_all_tags(search='Tag Name')
 ```
 
 ## About API v1

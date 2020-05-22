@@ -248,11 +248,32 @@ class Contacts(object):
     def list_all_custom_field_values(self):
         raise NotImplementedError
 
-    def add_a_tag_to_contact(self):
-        raise NotImplementedError
+    def add_a_tag_to_contact(self, data):
+        """
+        Add a tag to a contact
 
-    def remove_a_tag_from_a_contact(self):
-        raise NotImplementedError
+        :param data:
+        :return:
+        """
+        return self.client._post("/contactTags", json=data)
+
+    def remove_a_tag_from_a_contact(self, contact_tag_id):
+        """
+        Remove a tag from a contact
+
+        :param contact_tag_id: The contact tag id
+        :return:
+        """
+        return self.client._delete("/contactTags/{}".format(contact_tag_id))
+
+    def retrieve_contact_tags(self, contact_id):
+        """
+        Retrieve all tags from a contact
+
+        :param contact_id:
+        :return:
+        """
+        return self.client._get("/contacts/{}/contactTags".format(contact_id))
 
     def retrieve_field_options(self, field_id):
         """
