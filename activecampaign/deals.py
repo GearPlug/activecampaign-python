@@ -144,8 +144,18 @@ class Deals(object):
     def create_a_custom_field(self):
         raise NotImplementedError
 
-    def retrieve_a_custom_field(self):
-        raise NotImplementedError
+    def retrieve_custom_fields_by_id(self, field_id):
+        """
+        Retrieve all existing custom fields
+
+
+        Args:
+            field_id:
+
+        Returns:
+
+        """
+        return self.client._get("/deals/{}/dealCustomFieldData".format(field_id))
 
     def update_a_custom_field(self):
         raise NotImplementedError
@@ -153,8 +163,13 @@ class Deals(object):
     def delete_a_custom_field(self):
         raise NotImplementedError
 
-    def list_all_custom_fields(self):
-        raise NotImplementedError
+    def list_all_custom_fields(self, **params):
+        """
+
+        Returns:
+
+        """
+        return self.client._get("/dealCustomFieldMeta", params=params)
 
     def create_a_custom_field_value(self):
         raise NotImplementedError
