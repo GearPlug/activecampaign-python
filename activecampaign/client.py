@@ -8,6 +8,7 @@ from .notes import Notes
 from .tasks import Tasks
 from .users import Users
 from .webhooks import Webhooks
+from .messages import Messages
 from .tags import Tags
 
 
@@ -26,6 +27,7 @@ class Client(object):
         self.tasks = Tasks(self)
         self.users = Users(self)
         self.webhooks = Webhooks(self)
+        self.messages = Messages(self)
         self.tags = Tags(self)
 
     def _get(self, endpoint, **kwargs):

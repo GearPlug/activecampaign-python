@@ -15,6 +15,19 @@ class Notes(object):
         """
         return self.client._post("/notes", json=data)
 
+    def list_all_notes(self, **params):
+        """
+        Retrieve an existing note
+
+
+        Args:
+            note_id:
+
+        Returns:
+
+        """
+        return self.client._get("/notes", params=params)
+
     def retrieve_a_note(self, note_id):
         """
         Retrieve an existing note
