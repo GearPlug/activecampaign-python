@@ -10,6 +10,7 @@ from .users import Users
 from .webhooks import Webhooks
 from .messages import Messages
 from .tags import Tags
+from .emailActivities import EmailActivities
 
 
 class Client(object):
@@ -29,6 +30,7 @@ class Client(object):
         self.webhooks = Webhooks(self)
         self.messages = Messages(self)
         self.tags = Tags(self)
+        self.emailActivities = EmailActivities(self)
 
     def _get(self, endpoint, **kwargs):
         return self._request('GET', endpoint, **kwargs)
