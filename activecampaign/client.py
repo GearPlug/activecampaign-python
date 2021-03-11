@@ -3,7 +3,7 @@ import requests
 from .automations import Automations
 from .contacts import Contacts
 from .deals import Deals
-from .deepdataintegration import DeepDataIntegration
+from .deepdataintegrations import DeepDataIntegration
 from .lists import Lists
 from .notes import Notes
 from .tasks import Tasks
