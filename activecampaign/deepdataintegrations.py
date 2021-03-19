@@ -138,7 +138,7 @@ class DeepDataIntegrations(object):
         Returns:
 
         """
-        return self.client._post("/ecomOrders/".format(order_id))
+        return self.client._post("/ecomOrders/{}".format(order_id))
 
     def delete_an_ecommerce_order(self, order_id):
         """
