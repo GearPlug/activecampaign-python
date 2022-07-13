@@ -189,8 +189,13 @@ class Deals(object):
     def delete_a_custom_field_value(self):
         raise NotImplementedError
 
-    def list_all_custom_field_values(self):
-        raise NotImplementedError
+    def list_all_custom_field_values(self, **params):
+        """
+
+        Returns:
+
+        """
+        return self.client._get("/dealCustomFieldData", params=params)
 
     def create_a_secondary_contact(self):
         raise NotImplementedError

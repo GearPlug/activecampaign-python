@@ -8,7 +8,7 @@ def read(fname):
 
 
 setup(name='activecampaign-python',
-      version='1.0.3',
+      version='1.0.4',
       description='ActiveCampaign API written in python',
       long_description=read('README.md'),
       long_description_content_type="text/markdown",
