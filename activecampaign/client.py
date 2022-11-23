@@ -3,6 +3,7 @@ import requests
 from .automations import Automations
 from .contacts import Contacts
 from .deals import Deals
+from .deepdataintegrations import DeepDataIntegrations
 from .lists import Lists
 from .notes import Notes
 from .tasks import Tasks
@@ -28,6 +29,7 @@ class Client(object):
         self.users = Users(self)
         self.webhooks = Webhooks(self)
         self.messages = Messages(self)
+        self.deepdataintegrations = DeepDataIntegrations(self)
         self.tags = Tags(self)
 
     def _get(self, endpoint, **kwargs):
