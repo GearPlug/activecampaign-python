@@ -585,7 +585,7 @@ response = client.tags.create_a_tag(data)
 
 #### Retrieve a tag
 ```
-response = client.webhooks.retrieve_a_tag("tag_id")
+response = client.tags.retrieve_a_tag("tag_id")
 ```
 
 #### Update a tag
@@ -597,17 +597,17 @@ data = {
         "description": "Description"
     }
 }
-response = client.webhooks.update_a_tag("tag_id", data)
+response = client.tags.update_a_tag("tag_id", data)
 ```
 
 #### Delete a tag
 ```
-response = client.webhooks.delete_a_tag("tag_id")
+response = client.tags.delete_a_tag("tag_id")
 ```
 
 #### List all tags
 ```
-response = client.webhooks.list_all_tags(search='Tag Name')
+response = client.tags.list_all_tags(search='Tag Name')
 ```
 
 ## About API v1
