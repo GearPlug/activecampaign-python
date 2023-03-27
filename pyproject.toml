@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "activecampaign-python"
+version = "1.0.6"
+description = "API wrapper for ActiveCampaign written in Python"
+authors = ["Miguel Ferrer <ingferrermiguel@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "activecampaign"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.26.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
