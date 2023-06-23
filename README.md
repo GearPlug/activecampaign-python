@@ -610,6 +610,172 @@ response = client.tags.delete_a_tag("tag_id")
 response = client.tags.list_all_tags(search='Tag Name')
 ```
 
+### Custom Objects
+#### Create a schema
+```
+data = {
+  "schema": {
+    "slug": "object-name",
+    "labels": {
+      "singular": "ObjectName",
+      "plural": "ObjectNames"
+    },
+    "description": "Some Description",
+    "fields": [
+      {
+        "id": "some-field-id",
+        "labels": {
+          "singular": "ID",
+          "plural": "IDs"
+        },
+        "type": "text",
+        "required": True,
+      },
+    ],
+    "relationships": [
+      {
+        "id": "primary-contact",
+        "labels": {
+          "singular": "Primary Contact",
+          "plural": "Primary Contacts"
+        },
+        "description": "Primary contact to this object",
+        "namespace": "contacts",
+        "hasMany": False
+      }
+    ]
+  }
+}
+response = client.customobjects.create_a_schema(data=data)
+```
+
+#### Retrieve a schema
+```
+response = client.customobjects.retrieve_a_schema(schema_id="some-id", show_all_fields=False)
+```
+
+#### Update a schema
+```
+data = {
+  "schema": {
+    "slug": "object-name",
+    "labels": {
+      "singular": "ObjectName",
+      "plural": "ObjectNames"
+    },
+    "description": "Some Description",
+    "fields": [
+      {
+        "id": "some-field-id",
+        "labels": {
+          "singular": "ID",
+          "plural": "IDs"
+        },
+        "type": "text",
+        "required": True,
+      },
+      {
+        "id": "some-other-field-id",
+        "labels": {
+          "singular": "OtherID",
+          "plural": "OtherIDs"
+        },
+        "type": "text",
+        "required": True,
+      },
+    ],
+    "relationships": [
+      {
+        "id": "primary-contact",
+        "labels": {
+          "singular": "Primary Contact",
+          "plural": "Primary Contacts"
+        },
+        "description": "Primary contact to this object",
+        "namespace": "contacts",
+        "hasMany": False
+      }
+    ]
+  }
+}
+response = client.customobjects.update_a_schema(schema_id="some-schema-id", data=data, show_all_fields=False)
+```
+
+#### Delete a schema
+```
+response = client.customobjects.delete_a_schema(schema_id="some-id")
+```
+WARNING: This deletes all associated records
+
+#### List all schemas
+```
+response = client.customobjects.list_all_schemas(schema_relationship="contact", limit=20, offset=0, ordering=None, show_all_fields=False)
+```
+
+#### Delete field in schema
+```
+response = client.customobjects.delete_a_field(schema_id="some-id", field_id="some-field-id", show_all_fields=False)
+```
+
+#### Create a public schema
+```
+data = {
+
+}
+response = client.customobjects.create_a_public_schema(data=data)
+```
+
+#### Create a child schema
+```
+response = client.customobjects.create_a_child_schema(parent_id="some-parent-schema-id")
+```
+
+#### Upsert custom object record
+```
+data = {
+  "record": {
+    "fields": [
+      {
+        "id": "some-field-id",
+        "value": "asdf-1234"
+      },
+      {
+        "id": "some-other-field-id",
+        "value": "asdf-5678"
+      },
+    ]
+  }
+}
+response = client.customobjects.create_or_update_record(schema_id="some-id", data=data)
+```
+
+#### Retrieve a record
+```
+response = client.customobjects.retrieve_a_record(schema_id="some-id", record_id="some-record-id")
+```
+
+#### Retrieve a record by external id
+```
+response = client.customobjects.retrieve_a_record_by_external_id(schema_id="some-id", external_id="some-record-id")
+```
+
+#### Delete a record
+```
+response = client.customobjects.delete_a_record(schema_id="some-id", record_id="some-record-id")
+```
+
+#### Delete a record by external id
+```
+response = client.customobjects.delete_a_record_by_external_id(schema_id="some-id", external_id="some-record-id")
+```
+
+#### List all records
+```
+response = client.customobjects.list_all_records(
+        schema_id="some-id", contact_id="some-contact-id", deal_id=None, account_id=None,
+        limit=20, offset=0)
+```
+
 ## About API v1
 
 You can clone and checkout our tag v0.1.1.
