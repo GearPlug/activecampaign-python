@@ -13,6 +13,7 @@ from .messages import Messages
 from .tags import Tags
 from .emailActivities import EmailActivities
 from .dealActivities import DealActivities
+from .customobjects import CustomObjects
 
 
 class Client(object):
@@ -35,6 +36,7 @@ class Client(object):
         self.tags = Tags(self)
         self.emailActivities = EmailActivities(self)
         self.dealActivities = DealActivities(self)
+        self.customobjects = CustomObjects(self)
 
     def _get(self, endpoint, **kwargs):
         return self._request('GET', endpoint, **kwargs)
