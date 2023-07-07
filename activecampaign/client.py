@@ -14,7 +14,7 @@ from .tags import Tags
 from .emailActivities import EmailActivities
 from .dealActivities import DealActivities
 from .customobjects import CustomObjects
-
+from .campaigns import Campaigns
 
 class Client(object):
     BASE_URL = '{}/api/3'
@@ -37,6 +37,7 @@ class Client(object):
         self.emailActivities = EmailActivities(self)
         self.dealActivities = DealActivities(self)
         self.customobjects = CustomObjects(self)
+        self.campaigns = Campaigns(self)
 
     def _get(self, endpoint, **kwargs):
         return self._request('GET', endpoint, **kwargs)
