@@ -213,6 +213,71 @@ response = client.contacts.create_custom_field_options(data)
 response = client.contacts.retrieve_field_options("field_id")
 ```
 
+#### Create a custom field value
+```
+response = activecampaign_client.contacts.create_a_custom_field_value(data)
+```
+
+#### Retrieve a custom field value
+```
+response = activecampaign_client.contacts.retrieve_a_custom_field_value(field_value_id="some-id")
+```
+
+#### Update a custom field value for contact
+```
+response = activecampaign_client.contacts.update_a_custom_field_value_for_contact(data, field_value_id="some-id")
+```
+
+#### Delete a custom field value
+```
+response = activecampaign_client.contacts.delete_a_custom_field_value(field_value_id="some-id")
+```
+
+#### List all custom field values
+```
+response = activecampaign_client.contacts.list_all_custom_field_values()
+```
+
+#### Retrieve a contact's field values
+```
+response = activecampaign_client.contacts.retrieve_a_contacts_field_values(contact_id="some-id")
+```
+
+#### Retrieve a contact's tracking logs
+```
+response = activecampaign_client.contacts.retrieve_a_contacts_tracking_logs(contact_id="some-id")
+```
+
+#### Retrieve a contact's data
+```
+response = activecampaign_client.contacts.retrieve_a_contacts_data(contact_id="some-id")
+```
+
+#### Retrieve a contact's bounce logs
+```
+response = activecampaign_client.contacts.retrieve_a_contacts_bounce_logs(contact_id="some-id")
+```
+
+#### Retrieve a contact's geo ips
+```
+response = activecampaign_client.contacts.retrieve_a_contacts_geo_ips(contact_id="some-id")
+```
+
+#### Retrieve a contact's organization
+```
+response = activecampaign_client.contacts.retrieve_a_contacts_organization(contact_id="some-id")
+```
+
+#### Retrieve a contact's account contacts
+```
+response = activecampaign_client.contacts.retrieve_a_contacts_account_contacts(contact_id="some-id")
+```
+
+#### Retrieve a contact's automation entry counts
+```
+response = activecampaign_client.contacts.retrieve_a_contacts_automation_entry_counts(contact_id="some-id")
+```
+
 #### Add a tag to a contact
 ```
 data = {
@@ -810,6 +875,38 @@ response = activecampaign_client.addresses.delete_address_associated_with_list(l
 #### Retrieve all addresses
 ```
 response = activecampaign_client.addresses.retrieve_all_addresses()
+```
+
+### Campaigns
+#### List all campaigns
+```
+response = activecampaign_client.campaigns.list_all_campaigns()
+```
+
+#### Retrieve a link associated campaign
+```
+response = activecampaign_client.campaigns.retrieve_a_link_associated_campaign(campaign_id="some-id")
+```
+
+#### Retrieve a campaign
+```
+response = activecampaign_client.campaigns.retrieve_a_campaign(campaign_id="some-id")
+```
+
+### Brandings
+#### Retrieve a branding
+```
+response = activecampaign_client.brandings.retrieve_a_branding(branding_id="some-id")
+```
+
+#### Update a branding
+```
+response = activecampaign_client.brandings.update_a_branding(data, branding_id="some-id")
+```
+
+#### List all brandings
+```
+response = activecampaign_client.brandings.list_all_brandings()
 ```
 
 ## About API v1
