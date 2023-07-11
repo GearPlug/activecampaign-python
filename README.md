@@ -776,6 +776,49 @@ response = client.customobjects.list_all_records(
         limit=20, offset=0)
 ```
 
+## Addresses
+### Create an address
+...
+
+response = activecampaign_client.addresses.create_an_address(data)
+...
+
+### Retrieve an address
+...
+
+response = activecampaign_client.addresses.retrieve_address(address_id="some-id")
+...
+
+### Update an address
+...
+
+response = activecampaign_client.addresses.update_address(data, address_id="some-id")
+...
+
+### Delete an address
+...
+
+response = activecampaign_client.addresses.delete_address(address_id="some-id")
+...
+
+### Delete an address associated with a user group
+...
+
+response = activecampaign_client.addresses.delete_address_associated_with_user_group(group_id="some-id")
+...
+
+### Delete an address associated with a list
+...
+
+response = activecampaign_client.addresses.delete_address_associated_with_list(list_id="some-id")
+...
+
+### Retrieve all addresses
+...
+
+response = activecampaign_client.addresses.retrieve_all_addresses()
+...
+
 ## About API v1
 
 You can clone and checkout our tag v0.1.1.

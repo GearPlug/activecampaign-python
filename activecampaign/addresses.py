@@ -12,7 +12,7 @@ class Addresses(object):
         return self.client._put("/addresses/{}".format(address_id), json=data)
     
     def delete_address(self, address_id):
-        return self.client._delete("/addessers/{}".format(address_id))
+        return self.client._delete("/addresses/{}".format(address_id))
     
     def delete_address_associated_with_user_group(self, group_id):
         return self.client._delete("/addressGroups/{}".format(group_id))
