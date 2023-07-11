@@ -15,6 +15,7 @@ from .emailActivities import EmailActivities
 from .dealActivities import DealActivities
 from .customobjects import CustomObjects
 from .campaigns import Campaigns
+from .addresses import Addresses
 from .brandings import Brandings
 
 class Client(object):
@@ -39,6 +40,7 @@ class Client(object):
         self.dealActivities = DealActivities(self)
         self.customobjects = CustomObjects(self)
         self.campaigns = Campaigns(self)
+        self.addresses = Addresses(self)
         self.brandings = Brandings(self)
 
     def _get(self, endpoint, **kwargs):
