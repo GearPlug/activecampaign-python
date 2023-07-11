@@ -21,4 +21,4 @@ class Addresses(object):
         return self.client._delete("/addressLists/{}".format(list_id))
     
     def retrieve_all_addresses(self):
-        return self.client._get("/addresses/")
+        return self.client._get("/addresses")
