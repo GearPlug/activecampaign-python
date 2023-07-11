@@ -9,4 +9,4 @@ class Brandings(object):
         return self.client._put("/brandings/{}".format(branding_id), json=data)
     
     def list_all_brandings(self):
-        return self.client._get("/brandings/")
+        return self.client._get("/brandings")
