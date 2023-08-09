@@ -1,9 +1,11 @@
 import requests
 
+from .activities import Activities
 from .automations import Automations
 from .contacts import Contacts
 from .deals import Deals
 from .deepdataintegrations import DeepDataIntegrations
+from .events import Events
 from .lists import Lists
 from .notes import Notes
 from .tasks import Tasks
@@ -25,9 +27,11 @@ class Client(object):
         self.BASE_URL = self.BASE_URL.format(url)
         self.api_key = api_key
 
+        self.activities = Activities(self)
         self.automations = Automations(self)
         self.contacts = Contacts(self)
         self.deals = Deals(self)
+        self.events = Events(self)
         self.lists = Lists(self)
         self.notes = Notes(self)
         self.tasks = Tasks(self)
